@@ -1,17 +1,26 @@
-// $(function () {
-//   let meetTheMonsters = document.querySelector("#meet");
+let meetTheMonsters = document.querySelector("#meet");
+let navbar = document.querySelector(".site-nav");
+let sticky = navbar.offsetTop;
+let navHeight = navbar.scrollHeight;
 
-//   const moveHeader = () => {
-//     console.log(`${meetTheMonsters.getBoundingClientRect().top}`);
-//     window.requestAnimationFrame(moveHeader);
-//   };
+const moveHeader = () => {
+  let mainOnTop = meetTheMonsters.getBoundingClientRect().top - navHeight;
+  mainOnTop < 0
+    ? navbar.classList.add("in-body")
+    : navbar.classList.remove("in-body");
+  window.requestAnimationFrame(moveHeader);
+};
 
-//   window.requestAnimationFrame(moveHeader);
+window.requestAnimationFrame(moveHeader);
+
+// window.addEventListener("scroll", function () {
+//   // Check if the user has scrolled past the navbar
+//   if (window.scrollY >= sticky) {
+//     navbar.classList.add("in-body");
+//   } else {
+//     navbar.classList.remove("in-body");
+//   }
 // });
-
-// let nav = document.querySelector(".site-nav");
-// let meetTheMonsters = document.querySelector("#meet");
-// let navHeight = nav.scrollHeight;
 
 // const moveHeader = () => {
 //   let mainOnTop = meetTheMonsters.getBoundingClientRect().top - navHeight;

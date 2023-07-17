@@ -6,10 +6,10 @@ html {
   z-index: 20;
 }
 
-.site-nav .in-body {
-  background-color: rgb(148, 79, 238, 0.9);
+.in-body {
+  background-color: rgb(138, 74, 223, 0.9);
   animation: clear 1.25s forwards;
-  opacity: 0;
+  opacity: 1;
 }
 
 .site-header {
@@ -59,7 +59,7 @@ html {
 
 .site-nav .nav-link:hover::before {
   background-color: rgba(266, 207, 31, 0.5);
-  opacity: 1;
+  /* opacity: 1; */
   transform: scale(1);
 }
 
