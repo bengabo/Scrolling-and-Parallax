@@ -4,8 +4,11 @@ let navHeight = navbar.scrollHeight;
 let headerContent = document.querySelector(".header-content");
 let headerCue = document.querySelector(".header-cue");
 let headerCueHeight = headerCue.scrollHeight;
+let headerTitle = document.querySelector(".header-title");
+let headerSubtitle = document.querySelector(".header-subtitle");
 
 const moveHeader = () => {
+  let top = window.scrollY;
   let mainOnTop = meetTheMonsters.getBoundingClientRect().top - navHeight;
 
   mainOnTop < 0
@@ -17,6 +20,8 @@ const moveHeader = () => {
   currentCuePosition < -300
     ? headerCue.classList.add("d-none")
     : headerCue.classList.remove("d-none");
+
+    headerContent.style.transform = `translateY(-${top / 2}px)`;
 
   window.requestAnimationFrame(moveHeader);
 };
